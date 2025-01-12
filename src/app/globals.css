@@ -1,0 +1,13 @@
+
+
+
+@font-face {
+  font-family: 'avenir_book';
+  src: url('../../public/fonts/avenir_book.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'avenir_book', sans-serif;
+}
