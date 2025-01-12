@@ -6,8 +6,8 @@ import products from "../../../data/products"
 export const filterProducts = async (filters: { [key: string]: any }) => {
     const { name, popularityMin, popularityMax, priceMin, priceMax } = filters;
 
-    // const CGP = await getCurrentGoldPrice();
-    const CGP = 2689;
+    const CGP = await getCurrentGoldPrice();
+    // const CGP = 2689;
 
     const productsMap = await Promise.all(
         products.map(async (product) => {
@@ -38,7 +38,7 @@ const getCurrentGoldPrice = async () => {
     const config = {
         baseURL: 'https://www.goldapi.io/api/',
         headers: {
-            'x-access-token': 'goldapi-ej5esm5s49613-io',
+            'x-access-token': process.env.NEXT_PRIVATE_UAX_PRICE,
             'Content-Type': 'application/json',
         },
     };
