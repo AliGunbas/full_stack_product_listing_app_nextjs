@@ -12,7 +12,6 @@ export const filterProducts = async (filters: { [key: string]: any }) => {
     const productsMap = await Promise.all(
         products.map(async (product) => {
             const productPrice = (Number(product.popularityScore) + 1) * Number(product.weight) * CGP;
-            console.log("product price:", productPrice)
             const matchesName = name
                 ? product.name.toLowerCase().includes(name.toLowerCase())
                 : true;

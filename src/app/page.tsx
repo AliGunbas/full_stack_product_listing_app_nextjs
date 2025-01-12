@@ -35,7 +35,6 @@ export default function Home() {
   const searchProduct = async (name?:string, minPrice?:number, maxPrice?:number, maxStar?:number, minStar?:number) => {
     let ress = await axios
       .get(`${process.env.NEXT_PUBLIC_API_URL}/api/product?name=${name}&popularityMin=${minStar}&popularityMax=${maxStar}&priceMin=${minPrice}&priceMax=${maxPrice}`)
-    console.log("ress", ress)
     if (ress.status === 200) {
       setProducts(ress.data)
     } else {
